@@ -1,0 +1,32 @@
+<% include partials/header%>
+<h1>index page!!</h1>
+
+
+<div class="ui main text continer">
+  <div class="ui huge header">RESTful Fruit App</div>
+  <div class="ui top attatched segment">
+    <div class="ui devided items">
+      <% fruits.forEach(function(fruit){ %>
+        <div class="item">
+          <div class="image">
+            <img src="<%= fruit.image%>">
+          </div>
+          <div class="content">
+            <a class="header" href="/fruits/<%= fruit._id %>"><%= fruit.name %></a>
+            <div class="description">
+              <span><a><p><%-fruit.bio.substring(0, 100)%>...</p></a></span>
+            </div>
+            <div class="extra">
+              <a class="ui floated basic violet button" href="/fruits/<%= fruit._id %>">
+                Read More
+                <i class="right chevron icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
+
+<%include partials/footer%>

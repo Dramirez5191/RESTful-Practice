@@ -1,0 +1,19 @@
+<% include partials/header%>
+
+<div class="ui main container segment">
+    <div class="ui huge header"><%=fruit.name%></div>
+    <div class="ui top attatched">
+      <div class="item">
+        <img class="ui centered rounded image" src="<%=fruit.image%>">
+        <div class="description">
+          <p><%- fruit.bio%></p>
+        </div>
+        <a href="/fruits/<%= fruit._id%>/edit">Edit</a>
+      </div>
+      <form action="/fruits/<%= fruit._id%>?_method=DELETE" method="POST">
+        <button class="ui inverted red button" >Delete</button>
+      </form>
+    </div>
+</div>
+
+<% include partials/header%>
